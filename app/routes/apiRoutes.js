@@ -1,7 +1,7 @@
 // =================LOAD DATA================================
 // linking routes to a series of "data" sources.
 
-var friendsData = require("../app/data/friends");
+var friendsData = require("../data/friends");
 
 
 // ======================== ROUTING==========================
