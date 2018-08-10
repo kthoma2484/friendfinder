@@ -19,45 +19,26 @@
       <h1 class="text-center">Survey Questions</h1>
       <hr>
       <h3 class="text-left">About You</h3>
-
-      <form role="form">
-
-        <div class="form-group">
-          <label for="your-name">Name (Required)</label>
-          <input type="text" class="form-control" id="your-name">
-        </div>
-
-        <div class="form-group">
-          <label for="your-photo">Link to Photo Image (Required)</label>
-          <input type="text" class="form-control" id="your-photo">
-        </div>
-
-        <hr>
-
-        <div class="form-group">
-          <label for="question-one">Question 1</label>
-          <p>You would rather travel once a year than buy an expense name brand accessory.</p>
-          <select class="form-control" id="question-one">
-              <option>1 (Strongly Disagree)</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5 (Strongly Agree)</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="question-two">Question 2</label>
-          <p>Your perfect lazy afternoon involves a good book/movie, your favorite drink, and repeat.</p>
-          <input type="text" class="form-control" id="question-two">
-        </div>
-
-        <button type="submit" class="btn btn-primary submit">Submit</button>
-      </form>
-
-
-
     </div>
+
+    <form role="form" id="survey-container">
+
+      <div class="form-group">
+        <label for="your-name">Name (Required)</label>
+        <input type="text" class="form-control" id="your-name">
+      </div>
+
+      <div class="form-group">
+        <label for="your-photo">Link to Photo Image (Required)</label>
+        <input type="text" class="form-control" id="your-photo">
+      </div>
+      <hr>
+
+      {{compiledSurvey}}
+
+    </form>
+
+
 
     <footer class="footer">
       <div class="container">
@@ -66,7 +47,6 @@
     </footer>
 
   </div>
-
 
 </body>
 </html>
