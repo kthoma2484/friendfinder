@@ -3,9 +3,20 @@
 
 let friendArray = [
     {
-        name: "",
-        photo: "",
-        scores: []
+        name: "Jack Napier",
+        photo: "https://i.ytimg.com/vi/ELMbpGRTjRM/maxresdefault.jpg",
+        scores: [
+            5,
+            1,
+            2,
+            4,
+            2,
+            3,
+            5,
+            3,
+            2,
+            5
+        ]
     }
 ]
 

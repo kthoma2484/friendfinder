@@ -3,7 +3,6 @@
 
 var friendsData = require("../data/friends");
 
-
 // ======================== ROUTING==========================
 
 module.exports = function(app) {
@@ -20,4 +19,12 @@ module.exports = function(app) {
     // Note the code here. Our "server" will respond to requests and 
     friendsData.push(req.body);
   });
+
+  app.post("/api/clear", function() {
+    // Empty out the arrays of data
+    friendsData = [];
+
+    console.log(friendsData);
+  });
+
 };

@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Friendfinder - Survey Page</title>
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+    crossorigin="anonymous"></script>
 
 
 
 </head>
+
 <body>
 
   <div class="container">
@@ -21,32 +28,203 @@
       <h3 class="text-left">About You</h3>
     </div>
 
-    <form role="form" id="survey-container">
+    <form role="form">
 
       <div class="form-group">
         <label for="your-name">Name (Required)</label>
-        <input type="text" class="form-control" id="your-name">
+        <input type="text" class="form-control" id="your-name" required>
       </div>
 
       <div class="form-group">
         <label for="your-photo">Link to Photo Image (Required)</label>
-        <input type="text" class="form-control" id="your-photo">
+        <input type="text" class="form-control" id="your-photo" required>
       </div>
       <hr>
 
-      {{compiledSurvey}}
+      <div id="survey-container"></div>
+
+      <div class="form-group">
+        <label for="question-one">Question 1</label>
+        <p>You would rather travel once a year than buy an expense name brand accessory?</p>
+        <select class="form-control scores" name="question-one">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-two">Question 2</label>
+        <p>Your perfect lazy afternoon involves a good book/movie, your favorite drink, and repeat?</p>
+        <select class="form-control scores" name="question-two">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-three">Question 3</label>
+        <p>You prefer action/scifi movies over drama/romance movies?</p>
+        <select class="form-control scores" name="question-three">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-four">Question 4</label>
+        <p>Skydiving is definitely on your bucket list?</p>
+        <select class="form-control scores" name="question-four">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-five">Question 5</label>
+        <p>You prefer motorcycles over cars?</p>
+        <select class="form-control scores" name="question-five">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-six">Question 6</label>
+        <p>You would rather prepare a meal together with your partner than go out to have one prepared for you both?</p>
+        <select class="form-control scores" name="question-six">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-seven">Question 7</label>
+        <p>A great beach day is napping, reading, and laying out under the umbrella rather than playing volleyball frisby or
+          other sport-like activity?</p>
+        <select class="form-control scores" name="question-seven">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-eight">Question 8</label>
+        <p>In terms of religion, you think everyone has the right believe (or not beleive) in what every they choose?</p>
+        <select class="form-control scores" name="question-eight">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-nine">Question 9</label>
+        <p>Hiking is more appealing then having a beer and watching a game at the sports bar?</p>
+        <select class="form-control scores" name="question-nine">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="question-ten">Question 10</label>
+        <p>You're willing to try anything once as long as it's not too extreme - like swimming in a cage full of sharks?</p>
+        <select class="form-control scores" name="question-ten">
+          <option value="1">1 (Strongly Disagree)</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5 (Strongly Agree)</option>
+        </select>
+      </div>
+      <hr>
+      <button type="submit" class="btn submit">Submit</button>
 
     </form>
 
-
+    <hr>
 
     <footer class="footer">
       <div class="container">
-        <p><a href="/api/friends">API Friend List</a> | <a href="*">Home Page</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+        <p>
+          <a href="/api/friends">API Friend List</a> |
+          <a href="*">Home Page</a> |
+          <a href="https://github.com/kthoma2484/friendfinder">GitHub Repo</a>
+        </p>
       </div>
     </footer>
 
+
+
   </div>
 
+  <!-- Code below captures form data and sends to server -->
+  <script type="text/javascript">
+    $("form").submit(function (event) {
+      event.preventDefault();
+      
+      let surveyScores = [];
+
+      // Create an array of objects from form input values
+      let scoresData = $(":input").serializeArray();
+      
+      // Loope through the array and push the value of each input to surveyScores array
+      jQuery.each(scoresData, function (i, scoreData) {
+        // console.log((this.value))
+        let number = this.value
+        surveyScores.push(number);
+      })
+
+      // console.log(surveyScores)
+
+      // Create a new entry from form data
+      let newFriend = {
+        name: $('#your-name').val().trim(),
+        photo: $('#your-photo').val().trim(),
+        scores: surveyScores
+      }
+
+
+      console.log(newFriend);
+
+      // Post new data to friend api
+      $.post("/api/friends", newFriend, function(data) {
+
+        if (data) {
+          alert("Great job! We're close to finding your perfect friend!")
+        
+        friendsData.push(data);
+
+        } else {
+          alert("Please complete all form required sections.")
+        }
+
+        // Clear the form when submitting
+        $("#your-name").val("");
+        $("#your-photo").val("");
+        $("#your-score").val("");
+
+      });
+
+    });
+  </script>
 </body>
+
 </html>
