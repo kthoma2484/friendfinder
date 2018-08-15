@@ -174,17 +174,20 @@
 
 
   </div>
+</body>
+</html>
+
 
   <!-- Code below captures form data and sends to server -->
   <script type="text/javascript">
-    $("form").submit(function (event) {
+    $(".submit").on("click", function (event) {
       event.preventDefault();
-      
+
       let surveyScores = [];
 
       // Create an array of objects from form input values
       let scoresData = $(":input").serializeArray();
-      
+
       // Loope through the array and push the value of each input to surveyScores array
       jQuery.each(scoresData, function (i, scoreData) {
         // console.log((this.value))
@@ -201,30 +204,25 @@
         scores: surveyScores
       }
 
-
       console.log(newFriend);
 
       // Post new data to friend api
-      $.post("/api/friends", newFriend, function(data) {
+      $.post("/api/friendlist", newFriend, function(data) {
 
-        if (data) {
-          alert("Great job! We're close to finding your perfect friend!")
+        console.log(data)
         
-        friendsData.push(data);
-
-        } else {
-          alert("Please complete all form required sections.")
+        if (data) {
+          alert("You've been added to the friend bank!");
         }
-
         // Clear the form when submitting
         $("#your-name").val("");
         $("#your-photo").val("");
         $("#your-score").val("");
-
       });
+
+
+
+      // for (let i=0; i < friendsData.)
 
     });
   </script>
-</body>
-
-</html>
