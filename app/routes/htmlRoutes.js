@@ -15,23 +15,18 @@ module.exports = function (app) {
   //   })
   // });
 
-  app.get("/myfriend", function (req, res) {
-      
-    
-      res.sendFile(path.join(__dirname, "../public/myfriend.html"));
-     
-    });
-
-    app.post("/myfriend", function (req, res) {
-      res.render("surveyquestions", {
-
-      })
-    });
+  app.get("/myfriend", function (req, res) { 
+    res.sendFile(path.join(__dirname, "../public/myfriend.html"));
+  });
     
   // If no matching route is found default to home(*)
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  
+  app.post("/myfriend", function (req, res) {
+    res.render()
+  });
+
+
 };
